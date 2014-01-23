@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns="http://java.sun.com/xml/ns/j2ee" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	id="WebApp_ID" version="2.4"
+	xsi:schemaLocation="http://java.sun.com/xml/ns/j2ee http://java.sun.com/xml/ns/j2ee/web-app_2_4.xsd">
+	<display-name>MPSR</display-name>
+	<context-param>
+		<description>
+		Vaadin production mode</description>
+		<param-name>productionMode</param-name>
+		<param-value>false</param-value>
+	</context-param>
+	<servlet>
+		<servlet-name>MPSR</servlet-name>
+		<servlet-class>com.vaadin.server.VaadinServlet</servlet-class>
+		<init-param>
+			<description>
+			Vaadin UI class to use</description>
+			<param-name>UI</param-name>
+			<param-value>com.pma.mpsr.MPSRUI</param-value>
+		</init-param>
+		<init-param>
+			<description>
+			Legacy mode to return the value of the property as a string from AbstractProperty.toString()</description>
+			<param-name>legacyPropertyToString</param-name>
+			<param-value>false</param-value>
+		</init-param>
+	</servlet>
+	<servlet>
+		<description>
+		</description>
+		<display-name>PDFGenerator</display-name>
+		<servlet-name>PDFGenerator</servlet-name>
+		<servlet-class>com.pma.mpsr.export.PDFGenerator</servlet-class>
+	</servlet>
+	<!-- <servlet> <description> </description> <display-name>DocxGenerator</display-name> 
+		<servlet-name>DocxGenerator</servlet-name> <servlet-class>com.pma.mpsr.export.DocxGenerator</servlet-class> 
+		</servlet> -->
+	<servlet>
+		<description>
+		</description>
+		<display-name>DownloadPDF</display-name>
+		<servlet-name>DownloadPDF</servlet-name>
+		<jsp-file>/DownloadPDF.jsp</jsp-file>
+	</servlet>
+
+	<servlet-mapping>
+		<servlet-name>MPSR</servlet-name>
+		<url-pattern>/*</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>MPSR</servlet-name>
+		<url-pattern>/VAADIN/*</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>PDFGenerator</servlet-name>
+		<url-pattern>/PDFGenerator</url-pattern>
+	</servlet-mapping>
+	<!-- <servlet-mapping> <servlet-name>DocxGenerator</servlet-name> <url-pattern>/DocxGenerator</url-pattern> 
+		</servlet-mapping> -->
+	<servlet-mapping>
+		<servlet-name>DownloadPDF</servlet-name>
+		<url-pattern>/DownloadPDF.jsp</url-pattern>
+	</servlet-mapping>
+</web-app>

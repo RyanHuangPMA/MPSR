@@ -1,0 +1,126 @@
+/* Import the reindeer theme.*/
+/* This only allows us to use the mixins defined in it and does not add any styles by itself. */
+@import "../reindeer/reindeer.scss";
+
+/* This contains all of your theme.*/
+/* If somebody wants to extend the theme she will include this mixin. */
+@mixin MPSR {
+  /* Include all the styles from the reindeer theme */
+  @include reindeer;
+  
+  .v-icon {
+     width: 10px;
+     height: 10px;
+    }
+
+  .v-label-prototype1 {
+  	font: bold  24px Arial;
+  	text-align: center;
+  	color: red;
+  }
+  
+  .v-label-prototype2 {
+  	font: bold  16px Arial;
+  	text-align: center;
+  	color: red;
+  }
+  
+  .v-label-welcome_1 {
+  	font: bold  24px Arial;
+  	text-align: center;
+  }
+  
+  .v-label-welcome_2 {
+  	font: bold  20px Arial;
+  	text-align: center;
+  }
+  
+   .v-caption {
+  	font-weight: bold;
+  	color: brown;
+  }
+  
+   .form-1-2 {
+  	font-weight: bold;
+  	
+  	.v-textfield {
+  		text-align: center;
+  	}
+  	
+  	 .v-label-on-target {
+  		background-color: lightgreen;
+  		text-align: center;
+  	}
+  
+  	.v-label-at-risk {
+  		background-color: yellow;
+  		text-align: center;
+  	}
+  
+  	.v-label-off-target {
+  		background-color: red;
+  		text-align: center;
+  	}
+  }
+  
+   .form-1-2-1 {
+  	font-weight: bold;
+  	
+  		.v-label {
+  			text-align: right;
+  		}
+  }
+  
+  .form-2 {
+  	font-weight: bold;
+  	
+  	.v-textfield {
+  		text-align: center;
+  	}
+  	
+  	 .v-label-banner {
+  		color: yellow;
+  		background-color: blue;
+  		text-align: center;
+  	}
+  		
+  }
+  
+  .form-3 {
+  	font-weight: bold;
+  	
+  	.v-textfield {
+  		text-align: center;
+  	}
+  	
+  	.v-label {
+  		text-align: center;
+  	}
+  	 	
+  	.v-label-request {
+  		text-align: left;
+  	}
+  	
+  	.v-label-targetbudget {
+  		text-align: right;
+  	} 		
+  }
+  
+ .form-4 {
+  	font-weight: bold;
+  	
+  	.v-textfield {
+  		text-align: right;
+  	}
+  	
+  	.v-label-category {
+  		text-align: left;
+  	}
+  	 	
+  	.v-label-number {
+  		text-align: right;
+  	}
+  			
+  }
+  
+}
