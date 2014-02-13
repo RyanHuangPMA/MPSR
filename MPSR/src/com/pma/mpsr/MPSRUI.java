@@ -43,7 +43,7 @@ import com.vaadin.ui.Table.ColumnHeaderMode;
 @Title("MPSR")
 public class MPSRUI extends UI {
 
-	private static final String FILE_STORE_PATH = "C:/temp/mpsr_upload";
+	private static final String FILE_STORE_PATH = "mpsr_upload";
 	// private static final String FILE_STORE_PATH =
 	// "/export/home/pseg_apps/P6EPPM_1/api/mpsr_upload";
 

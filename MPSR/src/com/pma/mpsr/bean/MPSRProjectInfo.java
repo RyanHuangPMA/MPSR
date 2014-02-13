@@ -57,7 +57,7 @@ public class MPSRProjectInfo {
 	}
 
 	public String getFileName() {
-		return fileName;
+		return null != fileName ? fileName : "";
 	}
 
 	public String getReportMonthYear() {

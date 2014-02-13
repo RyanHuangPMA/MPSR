@@ -78,7 +78,7 @@ public class MPSRInsidePlantConstruction {
 	}
 
 	public String getFileName() {
-		return fileName;
+		return null != fileName ? fileName : "";
 	}
 
 	public void setFileName(String str) {

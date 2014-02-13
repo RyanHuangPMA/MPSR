@@ -1238,35 +1238,42 @@ public class PDFGenerator extends HttpServlet {
 			// Appendix
 			// *******************************************************************************************//
 
-			document.add(Chunk.NEXTPAGE);
-			outline1 = addOutline(root, writer, MPSRUI.TREE_APPENDIX);
+			if (appendixs.length > 0) {
 
-			for (int i = 0; i < appendixs.length; i++) {
-				addOutline(outline1, writer, "Appendix " + appendixs[i].getNumber() + "  " + appendixs[i].getTitle());
-				addSectionTitle(document, "Appendix " + appendixs[i].getNumber() + "  " + appendixs[i].getTitle(),
-						fontChapterHeader, 0, 12, 12);
-				addParagraph(document, writer, xmlWorker, appendixs[i].getDescription(), fontNormal, 12, 0, 0);
+				document.add(Chunk.NEXTPAGE);
+				outline1 = addOutline(root, writer, MPSRUI.TREE_APPENDIX);
 
-				importPages(document, writer, mpsrID, appendixs[i].getFileName());
+				for (int i = 0; i < appendixs.length; i++) {
+					addOutline(outline1, writer,
+							"Appendix " + appendixs[i].getNumber() + "  " + appendixs[i].getTitle());
+					addSectionTitle(document, "Appendix " + appendixs[i].getNumber() + "  " + appendixs[i].getTitle(),
+							fontChapterHeader, 0, 12, 12);
+					addParagraph(document, writer, xmlWorker, appendixs[i].getDescription(), fontNormal, 12, 0, 0);
+
+					importPages(document, writer, mpsrID, appendixs[i].getFileName());
+				}
 			}
 
 			// *******************************************************************************************//
 			// Attachment
 			// *******************************************************************************************//
 
-			document.setPageSize(DEFAULT_PAGE_SIZE);
-			document.add(Chunk.NEXTPAGE);
-			outline1 = addOutline(root, writer, MPSRUI.TREE_ATTACHMENT);
+			if (attachments.length > 0) {
 
-			for (int i = 0; i < attachments.length; i++) {
-				addOutline(outline1, writer,
-						"Attachment " + attachments[i].getNumber() + "  " + attachments[i].getTitle());
-				addSectionTitle(document,
-						"Attachment " + attachments[i].getNumber() + "  " + attachments[i].getTitle(),
-						fontChapterHeader, 0, 12, 12);
-				addParagraph(document, writer, xmlWorker, attachments[i].getDescription(), fontNormal, 12, 0, 0);
+				document.setPageSize(DEFAULT_PAGE_SIZE);
+				document.add(Chunk.NEXTPAGE);
+				outline1 = addOutline(root, writer, MPSRUI.TREE_ATTACHMENT);
 
-				importPages(document, writer, mpsrID, attachments[i].getFileName());
+				for (int i = 0; i < attachments.length; i++) {
+					addOutline(outline1, writer,
+							"Attachment " + attachments[i].getNumber() + "  " + attachments[i].getTitle());
+					addSectionTitle(document,
+							"Attachment " + attachments[i].getNumber() + "  " + attachments[i].getTitle(),
+							fontChapterHeader, 0, 12, 12);
+					addParagraph(document, writer, xmlWorker, attachments[i].getDescription(), fontNormal, 12, 0, 0);
+
+					importPages(document, writer, mpsrID, attachments[i].getFileName());
+				}
 			}
 
 			document.close();
