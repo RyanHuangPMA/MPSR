@@ -7,7 +7,7 @@
 		<description>
 		Vaadin production mode</description>
 		<param-name>productionMode</param-name>
-		<param-value>false</param-value>
+		<param-value>true</param-value>
 	</context-param>
 	<servlet>
 		<servlet-name>MPSR</servlet-name>
@@ -16,7 +16,7 @@
 			<description>
 			Vaadin UI class to use</description>
 			<param-name>UI</param-name>
-			<param-value>com.pma.mpsr.MPSRUI</param-value>
+			<param-value>com.kohmiho.mpsr.MPSRUI</param-value>
 		</init-param>
 		<init-param>
 			<description>
@@ -30,10 +30,10 @@
 		</description>
 		<display-name>PDFGenerator</display-name>
 		<servlet-name>PDFGenerator</servlet-name>
-		<servlet-class>com.pma.mpsr.export.PDFGenerator</servlet-class>
+		<servlet-class>com.kohmiho.mpsr.export.PDFGenerator</servlet-class>
 	</servlet>
 	<!-- <servlet> <description> </description> <display-name>DocxGenerator</display-name> 
-		<servlet-name>DocxGenerator</servlet-name> <servlet-class>com.pma.mpsr.export.DocxGenerator</servlet-class> 
+		<servlet-name>DocxGenerator</servlet-name> <servlet-class>com.kohmiho.mpsr.export.DocxGenerator</servlet-class> 
 		</servlet> -->
 	<servlet>
 		<description>
